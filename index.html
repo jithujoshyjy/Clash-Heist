@@ -16,12 +16,41 @@ user-scalable=no, shrink-to-fit=yes"/>
 <!--Site Icon-->
 <link rel="icon" sizes="192x192" type="image/jpg" href="img/clash_heist_logo.jpg"/>
 <link rel="apple-touch-icon" sizes="192x192" type="image/jpg" href="img/clash_heist_logo.jpg"/>
-<title>
-    Clash Heist    
-</title>
+<title> Clash Heist </title>
 <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
 <link type="text/css" rel="stylesheet" href="css/index-style.css"/>
+<style>
+div.fog_screen {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	}
+div.fog_screen img {
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+	animation: pulsate 1.5s ease 0s infinite;
+	}
+@keyframes pulsate {
+	0% {
+		border: 1px solid #EE6C19;
+		}
+	50% {
+		border: 10px solid #FFAE7A;
+		}
+	100% {
+		border: 1px solid #EE6C19;
+		}
+	}
+</style>
 <script src="js/all.min.js">
+</script>
+<script src="js/selector.js">
 </script>
 </head>
 <body>
@@ -848,9 +877,9 @@ user-scalable=no, shrink-to-fit=yes"/>
 			© Jithu Joshy Jy 2020
 		</small>
 	</footer>
-<script src="js/selector.js">
-</script>
 <script src="js/index-script.js">
 </script>
+<style onload="document.getElementsByClassName('fog_screen')[0].style.display = 'none';">
+</style>
 </body>
 </html>
