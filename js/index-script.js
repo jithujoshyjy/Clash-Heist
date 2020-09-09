@@ -1,3 +1,4 @@
+try {
 document.body.onload = () => $`div.fog_screen`.style.display = "none";
 
 $`button.settings`.onclick = () => $`dialog`.showModal();
@@ -48,6 +49,8 @@ $`div.settings-area > ul:first-of-type a`.forEach(el => {
 		$`dialog`.close();
 	};
 });
-
+} catch(e) {
+	alert(e);
+}
 
 
