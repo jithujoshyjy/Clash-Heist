@@ -1,0 +1,641 @@
+@font-face {
+	font-family: magic;
+	src: url("../fonts/magic.ttf");
+	}
+:root {
+	font-size: 5.1vw;
+	letter-spacing: -0.028rem;
+	user-select: none;
+	color: grey;
+	}
+a {
+	color: grey;
+	word-spacing: 0.05rem;
+	font-size: 0.8rem;
+	}
+a:hover {
+	color: #0080FF;
+	}
+hr {
+	width: 100%;
+	border: 0.08rem solid transparent;
+	background-color: lightgrey;
+	}
+body {
+	margin: 0.35rem;
+	background-color: #E8E8E0;
+	}
+div.fog_screen {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	}
+div.fog_screen img {
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+	animation: pulsate 1.5s ease 0s infinite;
+	}
+	@keyframes pulsate {
+		0% {
+			border: 1px solid #EE6C19;
+			}
+		50% {
+			border: 10px solid #FFAE7A;
+			}
+		100% {
+			border: 1px solid #EE6C19;
+			}
+		}
+header nav {
+	width: auto;
+	height: 2.5rem;
+	border-radius: 0.27rem;
+	display: flex;
+	align-items: center;
+	position: relative;
+	background-image: linear-gradient(to bottom,  #FFB23A 0%, #FFB23A 50%, #FCA41B 50%, #FCA41B 100%);
+	border: 0.2rem solid #FCA41B;
+	box-shadow: 0rem 0.2rem 0.2rem 0.05rem #B6B6AF;
+	}
+header nav h1 {
+	color: white;
+	font-variant: small-caps;
+	margin-left: 0.45rem;
+	font-size: 0.9rem;
+	font-weight: 500;
+	}
+header nav img {
+	opacity: 0.75;
+	width: 2.2rem;
+	height: 2.2rem;
+	display: inline-block;
+	margin-left: 0.25rem;
+	clip-path: circle(50%);
+	}
+header nav button.settings {
+	color: white;
+	position: absolute;
+	right: 0.5rem;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	}
+header nav button.settings:active {
+	transform: scale(0.85);
+	}
+main {
+	margin-top: 0.5rem;
+	border-radius: 0.27rem;
+	background-color: white;
+	min-height: 100vh;
+	}
+dialog {
+	outline: none;
+	position: fixed;
+	z-index: 150;
+	top: 25%;
+	width: 96.5%;
+	height: 80vw;
+	padding: 0;
+	border: 0.2rem solid #6E645B;
+	border-radius: 0.3rem;
+	}
+dialog::backdrop
+{
+	background-color: rgba(50, 50,
+50, 0.5);
+	}
+dialog div.title-bar {
+	width: auto;
+	height: 2.5rem;
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin: 0;
+	text-align:  center;
+	background-image: linear-gradient(to bottom,  #7D7371 0%, #7D7371 50%, #6E645B 50%, #6E645B 100%);
+	}
+dialog h5 {
+	display: block;
+	margin: 0 0 0 0.5rem;
+	text-align: center;
+	}
+dialog button.close {
+	color: white;
+	width: 1.67rem;
+	height: 1.67rem;
+	border: 0.1rem solid #6E645B;
+	outline: none;
+	position: absolute;
+	border-radius: 0.3rem;
+	right: 0.3rem;
+	background-image: linear-gradient(to bottom,  #F6858D 0%, #F6858D 50%, #DF041A 50%, #DF041A 100%);
+	}
+dialog button.close:active {
+	transform: scale(0.9);
+	}
+dialog button.close .fa-times {
+	font-size: 1.1rem;
+	stroke-width: 2rem;
+	stroke: #484848;
+	}
+dialog div.settings-area {
+	overflow: auto;
+	width: 100%;
+	height: 83%;
+	}
+div.settings-area h4 {
+	color: #484848;
+	margin: 1rem 0.2rem 0 0.2rem;
+	box-sizing: border-box;
+	padding: 0.5rem 0 0.5rem 0.5rem;
+	border: 0.1rem solid #D5D8CC;
+	border-radius: 0.2rem;
+	background-image: linear-gradient(to bottom,  #E8E9E3 0%, #E8E9E3 50%, #D5D8CC 50%, #D5D8CC 100%);
+	}
+div.settings-area ul {
+	list-style-type: none;
+	}
+div.settings-area ul .site-contents-heading {
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+	}
+div.settings-area > ul:first-of-type {
+	margin: 0.5rem 0.2rem 2.5rem 0.2rem;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	border-radius: 0.2rem;
+	}
+div.settings-area > ul:first-of-type a {
+		color: inherit;
+		font-size: inherit;
+		text-decoration: none;
+		display: inline-block;
+		box-sizing: border-box;
+		padding: 0.2rem;
+		width: 100%;
+	}
+div.settings-area > ul:first-of-type > li:first-of-type {
+	margin-bottom: 1rem;
+	}
+div.settings-area > ul:first-of-type > li ul {
+	padding: 0 0;
+	}
+div.settings-area > ul:first-of-type > li li {
+	font-size: 0.87rem;
+	border-radius: 0.2rem;
+	font-variant: small-caps;
+	background-color: #E8E8E0;
+	border: 0.1rem solid #D6D6D6;
+	padding: 0.5rem 1rem;
+	margin-bottom: 0.3rem;
+	}
+div.settings-area > ol:first-of-type li {
+	background-image: linear-gradient(to bottom,  #C4DAE5 0%, #C4DAE5 50%, #9EBED9 50%, #9EBED9 100%);
+	box-sizing: border-box;
+	font-size: 0.87rem;
+	position: relative;
+	border-radius: 0.2rem;
+	font-variant: small-caps;
+	padding: 0.5rem;
+	margin: 0 1rem 1.5rem 0;
+	border: 0.1rem solid #9EBED9;
+	}
+div.settings-area > ol:first-of-type li small:first-of-type {
+	position: absolute;
+	top: calc((100% - 1rem)/2);
+	right: 0.5rem;
+	}
+div.settings-area > ol:first-of-type li small {
+	user-select: text;
+	}
+div.settings-area > ol:first-of-type li.Me {
+	border: 0.1rem solid #A3C469;
+	background-image: linear-gradient(to bottom,  #AFCA7F 0%, #AFCA7F 50%, #A3C469 50%, #A3C469 100%);
+	}
+div.settings-area small {
+	font-size: 0.75rem;
+	user-select: text;
+	font-weight: normal;
+	margin-top: 0.1rem;
+	display: block;
+	}
+section.landing div:first-of-type {
+	width: auto;
+	height: 11.11rem;
+	background-image: url("../img/landing_page_img.jpg");
+	display: flex;
+	border-top-left-radius: 0.27rem;
+	border-top-right-radius: 0.27rem;
+	justify-content: center;
+	align-items: flex-end;
+	background-repeat: no-repeat;
+	background-size: cover;
+	}
+section.landing div:first-of-type h1 {
+	width: 90%;
+	font-size: 1.1rem;
+	}
+.wb-heading {
+	color: white;
+	text-align: center;
+	font-family: magic;
+	text-shadow: 0rem 0.2rem 0rem black;
+	}
+div.heading {
+	width: auto;
+	height: 4rem;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	}
+div.heading hr {
+	margin: 2rem 0;
+	}
+div.heading h3 {
+	font-family: magic;
+	color: #484848;
+	font-size: 0.79rem;
+	position: absolute;
+	top: 0.7rem;
+	padding: 0.1rem;
+	left: calc((100% - 7.5rem)/2);
+	background-color: white;
+	}
+section.page_content {
+	padding: 0 1.11rem;
+	box-sizing: border-box;
+	}
+div.info {
+	height: 2.8rem;
+	color: #7F7F7F;
+	display: flex;
+	align-items: center;
+	border-radius: 0.28rem;
+	border-top: 0.083rem solid #CCCCC5;
+	border-right: 0.083rem solid #CCCCC5;
+	background-color: #E8E8E0;
+	position: relative;
+	font-size: 0.6rem;
+	}
+div.info .fa-info-circle {
+	color: #7F7F7F;
+	font-size: 1rem;
+	margin: 0 0.5rem 0 0.7rem;
+	}
+img.info-villager {
+	width: 2.5rem;
+	height: auto;
+	position: absolute;
+	bottom: 0rem;
+	right: 0.55rem;
+	}
+div.info p {
+	margin: 0;
+	box-sizing: border-box;
+	padding-right: 2.5rem;
+	}
+div.troops-intro {
+	height: 9rem;
+	margin: 1.5rem 0 1.5rem 0;
+	padding: 1.11rem;
+	box-sizing: border-box;
+	border-radius: 0.2rem;
+	background-image: linear-gradient(to right, #556C1F, #BBC854);
+	}
+div.troops-intro h4 {
+	text-align: left;
+	display: inline-block;
+	margin: 0;
+	margin-bottom: 1rem;
+	}
+div.troops-intro p {
+	color: white;
+	margin: 0;
+	font-size: 0.9rem;
+	}
+div.elixir {
+	width: auto;
+	height: 2rem;
+	display: inline-flex;
+	box-sizing: border-box;
+	padding: 0.5rem 1rem;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.4rem;
+	border: 0.15rem solid #CE47CE;
+	background-image: linear-gradient(to bottom,  #E27FE2 0%, #E27FE2 50%, #CE47CE 50%, #CE47CE 100%);
+	}
+div.dark-elixir {
+	width: 8.3rem;
+	height: 2rem;
+	border-radius: 0.4rem;
+	display: inline-flex;
+	box-sizing: border-box;
+	padding: 0.5rem 1rem;
+	justify-content: center;
+	align-items: center;
+	border: 0.15rem solid #2D2032;
+	background-image: linear-gradient(to bottom,  #695F6B 0%, #695F6B 50%, #2D2032 50%, #2D2032 100%);
+	}
+div.elixir .wb-heading, div.dark-elixir .wb-heading {
+	display: inline-block;
+	}
+div.home-village-troops {
+	margin: 2rem 0 5rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	vertical-align: middle;
+	justify-content: space-between;
+	align-items: baseline;
+	}
+div.troop-tile {
+	width: 45%;
+	min-height: 27.8rem;
+	}
+div.troop-tile img {
+	height: auto;
+	}
+div.troop-tile h4 {
+	color: #484848;
+	font-weight: 500;
+	font-size: 0.9rem;
+	}
+div.troop-tile p {
+	margin: 0.5rem 0 1rem 0;
+	font-size: 0.9rem;
+	text-align: justify;
+	line-height: 1.25rem;
+	}
+div.troop-tile a {
+	display: inline-block;
+	}
+div.troop-tile .fa-external-link-alt {
+	color: #9E9E9E;
+	}
+/* Tile specific styles */
+div.troop-tile.barbarian img, div.troop-tile.giant img, div.troop-tile.goblin img, div.troop-tile.wall_breaker img, div.troop-tile.wizard img, div.troop-tile.miner img, div.troop-tile.yeti img {
+	width: 5.6rem;
+	}
+div.troop-tile.archer img, div.troop-tile.healer img {
+	width: 6.67rem;
+	}
+div.troop-tile.balloon img, div.troop-tile.pekka img {
+	width: 6.11rem;
+	}
+div.troop-tile.dragon img {
+	width: 7.2rem;
+	}
+div.troop-tile.baby_dragon img {
+	width: 5rem;
+	}
+div.troop-tile.electro_dragon img {
+	width: 8.3rem;
+	}
+div.troop-tile.barbarian a, div.troop-tile.goblin a, div.troop-tile.healer a {
+	margin-top: 1.35rem;
+	}
+div.troop-tile.pekka a {
+	margin-top: 2.7rem;
+	}
+div.troop-tile.yeti a {
+	margin-top: 7.55rem;
+	}
+div.troop-tile.electro_dragon img {
+	margin-left: -1.11rem;
+	}
+div.troop-tile.minion a {
+	margin-top: 1.4rem;
+	}
+div.troop-tile.witch a {
+	margin-top: 1.4rem;
+	}
+div.troop-tile.bowler a {
+	margin-top: 6.3rem;
+	}
+div.troop-tile.headhunter img {
+	margin-top: 2rem;
+	}
+div.dark-elixir-troops {
+	margin: 1rem 100% 0 0;
+	}
+div.dark-elixir-troops h6 {
+	white-space: pre;
+	}
+div.spells-intro {
+	height: 9rem;
+	margin: 3rem 0 1.5rem 0;
+	padding: 1.11rem;
+	box-sizing: border-box;
+	border-radius: 0.2rem;
+	background-image: linear-gradient(to right, #261B40, #A14EC9);
+	}
+div.spells-intro h3 {
+	text-align: left;
+	display: inline-block;
+	margin: 0;
+	margin-bottom: 1rem;
+	}
+div.spells-intro p {
+	color: white;
+	margin: 0;
+	font-size: 0.9rem;
+	}
+div.elixir-spells {
+	margin-top: 1.5rem;
+	}
+div.dark-elixir-spells {
+	margin: 1rem 100% 2rem 0;
+	}
+div.dark-elixir-spells h6 {
+	white-space: pre;
+	}
+div.home-village-spells {
+	margin-top: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	vertical-align: middle;
+	justify-content: space-between;
+	align-items: baseline;
+	}
+div.spell-tile {
+	width: 45%;
+	min-height: 20rem;
+	}
+div.spell-tile img {
+	height: auto;
+	}
+div.spell-tile h4 {
+	color: #484848;
+	font-weight: 500;
+	font-size: 0.9rem;
+	}
+div.spell-tile p {
+	margin: 0.5rem 0 1rem 0;
+	font-size: 0.9rem;
+	text-align: justify;
+	line-height: 1.25rem;
+	}
+div.spell-tile a {
+	display: inline-block;
+	margin-bottom: 2.5rem;
+	}
+div.spell-tile .fa-external-link-alt {
+	color: #9E9E9E;
+	}
+div.spell-tile.healing_spell a {
+	margin-top: 1.5rem;
+	}
+div.spell-tile.rage_spell a {
+	margin-top: 2.7rem;
+	}
+div.spell-tile.freeze_spell a {
+	margin-top: 1.5rem;
+	}
+div.spell-tile.poison_spell a {
+	margin-top: 6.3rem;
+	}
+div.spell-tile.skeleton_spell a {
+	margin-top: 5.2rem;
+	}
+div.heroes-intro {
+	height: 9rem;
+	margin: 3rem 0 1.5rem 0;
+	padding: 1.11rem;
+	box-sizing: border-box;
+	border-radius: 0.2rem;
+	background-image: linear-gradient(to right, #A46D4F, #FEE794);
+	}
+div.heroes-intro h3 {
+	text-align: left;
+	display: inline-block;
+	margin: 0;
+	margin-bottom: 1rem;
+	}
+div.heroes-intro p {
+	color: white;
+	margin: 0;
+	font-size: 0.9rem;
+	}
+div.home-village-heroes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	}
+div.hero-tile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 3rem;
+	}
+div.hero-tile img {
+	width: 11.67rem;
+	height: auto;
+	}
+div.hero-tile h4 {
+	color: #484848;
+	margin: 1rem 0;
+	}
+div.hero-tile p {
+	width: 75%;
+	margin: 0;
+	text-align: justify;
+	}
+div.hero-tile a {
+	display: inline-block;
+	margin-top: 1rem;
+	}
+div.builder-base-intro {
+	height: 9rem;
+	margin: 0rem 0 1.5rem 0;
+	padding: 1.11rem;
+	box-sizing: border-box;
+	border-radius: 0.2rem;
+	background-image: linear-gradient(to right, #463E3B, #9F9C97);
+	}
+div.builder-base-intro h4 {
+	text-align: left;
+	display: inline-block;
+	margin: 0;
+	margin-bottom: 1rem;
+	}
+div.builder-base-intro p {
+	color: white;
+	margin: 0;
+	font-size: 0.9rem;
+	}
+div.builder-base-troops {
+	margin-top: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	vertical-align: middle;
+	justify-content: space-between;
+	align-items: baseline;
+	}
+div.builder-base-troops .troop-tile {
+	min-height: 24rem;
+	}
+div.troop-tile.beta_minion a {
+	margin-top: 1.5rem;
+	}
+div.troop-tile.baby_dragon a {
+	margin-top: 2.7rem;
+	}
+div.sole-hero {
+	width: auto;
+	height: 2rem;
+	display: inline-flex;
+	margin: 1rem 0 2.5rem 0;
+	box-sizing: border-box;
+	padding: 0.5rem 1rem;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.4rem;
+	border: 0.15rem solid #DC4300;
+	background-image: linear-gradient(to bottom,  #F88414 0%, #F88414 50%, #DC4300 50%, #DC4300 100%);
+	}
+div.builder-base-heroes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	}
+div.builder-base-troops div.troop-tile:last-of-type {
+	min-height: 21rem;
+	}
+footer {
+	color: white;
+	height: auto;
+	font-size: 1.3rem;
+	margin-top: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	border-radius: 0.2rem;
+	background-color: #484848;
+	}
+footer small {
+	margin: 0 1rem 0 auto;
+	font-size: 0.75rem;
+	}
+footer nav {
+	width: auto;
+	height: 2.78rem;
+	height: auto;
+	display: flex;
+	margin-top: 0.3rem;
+	align-items: center;
+	}
+footer a {
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+	}
+footer nav [title] {
+	margin: 0.5rem;
+	}
