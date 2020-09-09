@@ -49,9 +49,6 @@ document.body.onload = () => {
 			$`dialog`.close();
 		};
 	});
-	setTimeout(() => {
-		alert(getComputedStyle($`div.fog_screen`).display);
-	}, 5000);
 };
 
 
