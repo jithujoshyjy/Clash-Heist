@@ -1,4 +1,5 @@
-document.body.onload = () => {
+const loadScript = () => {
+	
 	$`div.fog_screen`.style.display = "none";
 	
 	$`button.settings`.onclick = () => $`dialog`.showModal();
@@ -9,7 +10,7 @@ document.body.onload = () => {
 		{ id: "#8RV9COR22", name: "Josu", status: "co-leader" },
 		{ id: "#9VULCUYLG", name: "DemonsBro47Q", status: "co-leader" },
 		{ id: "#LGOVYJPLP", name: "Niander Thrain", status: "co-leader" },
-		{ id: "#9VLOPCQRY", name: "JJ009", status: "elder" },
+		{ id: "#9VLOPCQRY", name: "Jeffrin", status: "co-leader" },
 		{ id: "#P9UC228JL", name: "Happy Thomas", status: "member" },
 		{ id: "#P8UUG2VJJ", name: "King of Kings", status: "co-leader" },
 		{ id: "#P9JCGUVC8", name: "Shadow Warrior", status: "co-leader" },
@@ -49,6 +50,15 @@ document.body.onload = () => {
 			$`dialog`.close();
 		};
 	});
+	
+	$`button.toggle-theme`.onclick = function() {
+		$`img`.forEach(el => {
+			if(el.classList.contains("inverted"))
+				el.classList.remove("inverted")
+			else el.classList.add("inverted")
+		});
+		document.documentElement.classList.toggle("dark-theme");
+	};
 };
 
 
