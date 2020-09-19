@@ -8,6 +8,12 @@
 	user-select: none;
 	color: grey;
 	}
+.dark-theme {
+	filter: invert(1) hue-rotate(180deg) !important;
+	}
+.inverted {
+	filter: invert(1) hue-rotate(180deg) !important;
+	}
 a {
 	color: grey;
 	word-spacing: 0.05rem;
@@ -25,33 +31,6 @@ body {
 	margin: 0.35rem;
 	background-color: #E8E8E0;
 	}
-div.fog_screen {
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	z-index: 100;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: white;
-	}
-div.fog_screen img {
-	width: 5rem;
-	height: 5rem;
-	border-radius: 50%;
-	animation: pulsate 1.5s ease 0s infinite;
-	}
-	@keyframes pulsate {
-		0% {
-			border: 1px solid #EE6C19;
-			}
-		50% {
-			border: 10px solid #FFAE7A;
-			}
-		100% {
-			border: 1px solid #EE6C19;
-			}
-		}
 header nav {
 	width: auto;
 	height: 2.5rem;
@@ -84,6 +63,7 @@ header nav button.settings {
 	right: 0.5rem;
 	border: none;
 	outline: none;
+	font-size: 1rem;
 	background-color: transparent;
 	}
 header nav button.settings:active {
@@ -360,7 +340,8 @@ div.troop-tile {
 	min-height: 27.8rem;
 	}
 div.troop-tile img {
-	height: auto;
+	min-width: 5rem;
+	min-height: 5.56rem;
 	}
 div.troop-tile h4 {
 	color: #484848;
@@ -422,6 +403,18 @@ div.troop-tile.bowler a {
 div.troop-tile.headhunter img {
 	margin-top: 2rem;
 	}
+div.troop-tile.minion img {
+	width: 4.4rem;
+	}
+div.troop-tile.hog_rider img, div.troop-tile.valkyrie img, div.troop-tile.witch img {
+	width: 5.56rem;
+	}
+div.troop-tile.lava_hound img, div.troop-tile.bowler img {
+	width: 6.67rem;
+	}
+div.troop-tile.golem img, div.troop-tile.ice_golem img, div.troop-tile.headhunter img {
+	width: 7.22rem;
+	}
 div.dark-elixir-troops {
 	margin: 1rem 100% 0 0;
 	}
@@ -469,6 +462,7 @@ div.spell-tile {
 	min-height: 20rem;
 	}
 div.spell-tile img {
+	width: 4.44rem;
 	height: auto;
 	}
 div.spell-tile h4 {
@@ -584,8 +578,20 @@ div.builder-base-troops .troop-tile {
 div.troop-tile.beta_minion a {
 	margin-top: 1.5rem;
 	}
-div.troop-tile.baby_dragon a {
-	margin-top: 2.7rem;
+div.troop-tile.cannon_cart img {
+	width: 5rem;
+	}
+div.troop-tile.sneaky_archer img, div.troop-tile.beta_minion img {
+	width: 5.56rem;
+	}
+div.troop-tile.bomber img {
+	width: 6.11rem;
+	}
+div.troop-tile.raged_barbarian img, div.builder-base-troops div.troop-tile.baby_dragon img, div.troop-tile.night_witch img, div.troop-tile.super_pekka img {
+	width: 6.67rem;
+	}
+div.troop-tile.boxer_giant img, div.troop-tile.drop_ship img, div.troop-tile.hog_glider img {
+	width: 7.22rem;
 	}
 div.sole-hero {
 	width: auto;
@@ -607,6 +613,15 @@ div.builder-base-heroes {
 	}
 div.builder-base-troops div.troop-tile:last-of-type {
 	min-height: 21rem;
+	}
+button.toggle-theme {
+	border: 0.1rem solid grey;
+	outline: none;
+	float: right;
+	color: grey;
+	margin: 0.25rem 0.2rem 0 0;
+	border-radius: 0.2rem;
+	background-color: transparent;
 	}
 footer {
 	color: white;
